@@ -32,6 +32,7 @@ public class Q6 {
                 int ascii2 = c2;
                         
 //              violate rule A : first character starts with digit
+//              2-9 in ascii
                 if ((k==0) && (ascii1 >= 50) && (ascii1 <= 57)){
                     valid_log = false;
                 }
@@ -55,6 +56,7 @@ public class Q6 {
                         waitlist += c1;
 
                         int x = ascii2 - 48;
+//                      0 starts at 48 in ascii
                         for (int i=0; i<(x-1); i++){
                             waitlist += c1;
                         }
