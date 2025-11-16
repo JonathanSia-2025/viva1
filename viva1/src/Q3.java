@@ -16,19 +16,32 @@ public class Q3 {
      */
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        boolean valid = true;
             
-            int n_queries = sc.nextInt();
-            int [] height = new int [n_queries];
-            String [] type = new String [n_queries];
-            
-            for (int i = 0; i < n_queries; i++){
-                height[i] = sc.nextInt();
-                type[i] = sc.next();
+        
+        int n_inquiries = sc.nextInt();
+        if ((n_inquiries < 1) || (n_inquiries > 50)){
+               System.out.println("number of inquiries is out of range(1-50)");
+               valid = false;
+            }
+        int [] height = new int [n_inquiries];
+        String [] style = new String [n_inquiries];
+        for (int i = 0; i < n_inquiries; i++){
+            height[i] = sc.nextInt();
+
+            if ((height[i] < 0 ) || (height[i] > 9 )){
+                System.out.println("height is out of range(1-9");
+                valid = false;
+                }
+            style[i] = sc.next();
             }
             
-            for (int i = 0; i < n_queries; i++){
+        if (valid){
+                
+            
+            for (int i = 0; i < n_inquiries; i++){
                 int h = height[i];
-                String t = type[i];
+                String t = style[i];
                 switch (t) {
                     case "A" -> {
                         
@@ -62,9 +75,13 @@ public class Q3 {
                             System.out.println();
                         }
                     }
-                    default -> System.out.print("Enter A and P only for Angle and Pyramid pattern respectively.");
+                    default -> {
+                        System.out.print("Enter A and P only for Angle and Pyramid pattern respectively.");
+                        valid = false;
+                    }
                 }
-                
+            
             }        
+        }
         }
     }
